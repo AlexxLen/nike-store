@@ -1,5 +1,5 @@
-import Clip from './utils/Clip';
-import SocialLink from './utils/SocialLink';
+import Clip from './UI/Clip';
+import SocialLink from './UI/SocialLink';
 
 const Hero = ({ info }) => {
   const { title, subtitle, img, btnText, videos, socialLinks } = info;
@@ -7,7 +7,8 @@ const Hero = ({ info }) => {
   return (
     <>
       <div className='relative h-auto w-auto flex flex-col'>
-        <div className='bg-theme clip-path h-[85vh] lg:h-[75vh] md:h-[65vh] sm:h-[55vh] w-auto absolute top-0 left-0 right-0 opacity-100 z-10'>
+        {/* z-0 or z-10 */}
+        <div className='bg-theme clip-path h-[85vh] lg:h-[75vh] md:h-[65vh] sm:h-[55vh] w-auto absolute top-0 left-0 right-0 opacity-100 z-0'>
           Header
         </div>
         <div className='relative opacity-100 z-20 grid items-center justify-items-center nike-container'>
@@ -29,7 +30,7 @@ const Hero = ({ info }) => {
                 <Clip key={i} img={item.img} clip={item.clip} />
               ))}
             </div>
-            <div className='grid items-center gap-3 md:gap-3 absolute top-[33vh] lg:top-[27vh] right-0 w-auto h-auto'>
+            <div className='grid items-center gap-3 md:gap-3 absolute top-[33vh] lg:top-[27vh] z-20 right-0 w-auto h-auto'>
               {socialLinks.map((item, i) => (
                 <SocialLink key={i} icon={item.icon} />
               ))}

@@ -50,7 +50,7 @@ const heroInfo = {
   ]
 };
 
-const popularsales = {
+const popularSales = {
   title: 'Popular Sales',
   items: [
     {
@@ -107,7 +107,7 @@ const sneaker = {
   img: sneakershoe
 };
 
-const toprateslaes = {
+const topRatedSales = {
   title: 'Top Rated Sales',
   items: [
     {
@@ -245,7 +245,7 @@ const toprateslaes = {
   ]
 };
 
-const story = {
+const topStories = {
   title: 'Top Stories',
   news: [
     {
@@ -341,7 +341,7 @@ const story = {
   ]
 };
 
-const footerAPI = {
+const footerInfo = {
   titles: [{ title: 'About Nike' }, { title: 'Get Help' }, { title: 'Company' }],
   links: [
     [
@@ -371,4 +371,4 @@ const footerAPI = {
   ]
 };
 
-export { footerAPI, heroInfo, highlight, popularsales, sneaker, story, toprateslaes };
+export { footerInfo, heroInfo, highlight, popularSales, sneaker, topRatedSales, topStories };
