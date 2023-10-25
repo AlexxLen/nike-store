@@ -245,7 +245,7 @@ const topRatedSales = {
   ]
 };
 
-const topStories = {
+const stories = {
   title: 'Top Stories',
   news: [
     {
@@ -371,4 +371,4 @@ const footerInfo = {
   ]
 };
 
-export { footerInfo, heroInfo, highlight, popularSales, sneaker, topRatedSales, topStories };
+export { footerInfo, heroInfo, highlight, popularSales, sneaker, stories, topRatedSales };

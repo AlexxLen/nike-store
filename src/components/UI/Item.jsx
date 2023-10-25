@@ -8,7 +8,7 @@ const Item = ({ id, isHorizontal, color, shadow, title, text, img, btn, rating, 
       }  rounded-xl py-4 px-5 transition-all duration-700 ease-in-out w-full hover:scale-105`}
     >
       <div
-        className={`grid items-center ${
+        className={`relative z-10 grid items-center ${
           isHorizontal ? 'justify-items-start' : 'justify-items-center'
         }`}
       >
