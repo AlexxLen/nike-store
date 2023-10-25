@@ -1,4 +1,4 @@
-import { FlexContent, Footer, Header, Hero, Sales, Stories } from './components';
+import { Cart, FlexContent, Footer, Header, Hero, Sales, Stories } from './components';
 import {
   footerInfo,
   heroInfo,
@@ -13,6 +13,7 @@ const App = () => {
   return (
     <>
       <Header />
+      <Cart />
       <main className='flex flex-col gap-16 relative'>
         <Hero info={heroInfo} />
         <Sales info={popularSales} isLarge={true} />
