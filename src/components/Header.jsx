@@ -1,9 +1,27 @@
 import { HeartIcon, MagnifyingGlassCircleIcon, ShoppingBagIcon } from '@heroicons/react/24/outline';
 import { useEffect, useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectCartItems, selectTotalCount, setCartOpened } from '../app/cartSlice';
 import logo from '../assets/logo.png';
 
 const Header = () => {
   const [show, setShow] = useState(false);
+  const dispatch = useDispatch();
+  const cartItems = useSelector(selectCartItems);
+  const totalCount = useSelector(selectTotalCount);
+
+  useEffect(() => {
+    const cart = JSON.stringify(cartItems);
+    localStorage.setItem('cart', cart);
+  });
+
+  const onCartClick = () => {
+    dispatch(
+      setCartOpened({
+        cartOpened: true,
+      }),
+    );
+  };
 
   const handleScroll = () => {
     if (window.scrollY > 30) {
@@ -40,16 +58,19 @@ const Header = () => {
             <HeartIcon className={`icon-style ${show && 'text-slate-900'}`} />
           </li>
           <li>
-            <button className='border-none outline-none active:scale-110 transition-all duration-300 relative'>
+            <button
+              onClick={onCartClick}
+              className='border-none outline-none active:scale-110 transition-all duration-300 relative'
+            >
               <ShoppingBagIcon className={`icon-style ${show && 'text-slate-900'}`} />
               <span
-                className={`absolute top-4 right-0 w-4 h-4 text-[0.65rem] shadow leading-tight font-medium rounded-full flex items-center justify-center hover:scale-110 transition-all duration-300 ${
+                className={`absolute top-4 right-0 w-4 h-4 text-[0.65rem] shadow leading-tight font-medium rounded-full flex items-center justify-center  ${
                   show
                     ? 'bg-slate-900 text-slate-100 shadow-slate-900'
                     : 'bg-white text-slate-900 shadow-slate-100'
                 }`}
               >
-                0
+                {totalCount}
               </span>
             </button>
           </li>

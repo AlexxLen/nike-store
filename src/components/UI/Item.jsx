@@ -1,6 +1,21 @@
 import { ShoppingBagIcon, StarIcon } from '@heroicons/react/24/solid';
+import toast from 'react-hot-toast';
+import { useDispatch } from 'react-redux';
+import { addItemToCart, setCartOpened } from '../../app/cartSlice';
 
-const Item = ({ id, isHorizontal, color, shadow, title, text, img, btn, rating, price }) => {
+const Item = ({ value, isHorizontal = false }) => {
+  const dispatch = useDispatch();
+  const { id, color, shadow, title, text, img, btn, rating, price } = value;
+
+  const onAddToCart = () => {
+    dispatch(addItemToCart(value));
+    toast.success(`${title} added to cart`);
+  };
+
+  const openCart = () => {
+    dispatch(setCartOpened({ cartOpened: true }));
+  };
+
   return (
     <div
       className={`relative bg-gradient-to-b ${color} ${shadow} grid items-center ${
@@ -30,10 +45,19 @@ const Item = ({ id, isHorizontal, color, shadow, title, text, img, btn, rating, 
         </div>
 
         <div className='flex items-center gap-3'>
-          <button className='flex items-center bg-white/90 blur-effect-theme button-theme p-0.5 shadow-sky-200'>
+          <button
+            onClick={onAddToCart}
+            className='flex items-center bg-white/90 blur-effect-theme button-theme p-0.5 shadow-sky-200'
+          >
             <ShoppingBagIcon className='icon-style text-slate-900' />
           </button>
-          <button className='flex items-center bg-white/90 blur-effect-theme button-theme px-2 py-1 shadow-sky-200 text-sm text-black'>
+          <button
+            onClick={() => {
+              onAddToCart();
+              openCart();
+            }}
+            className='flex items-center bg-white/90 blur-effect-theme button-theme px-2 py-1 shadow-sky-200 text-sm text-black'
+          >
             {btn}
           </button>
         </div>

@@ -14,7 +14,7 @@ const Sales = ({ info, isLarge }) => {
         } `}
       >
         {items?.map((item, i) => (
-          <Item key={i} {...item} isHorizontal={isLarge} />
+          <Item key={i} value={item} isHorizontal={isLarge} />
         ))}
       </div>
     </div>
