@@ -73,7 +73,6 @@ const Item: React.FC<ItemProps> = ({ value, isHorizontal = false }) => {
           isHorizontal ? 'absolute top-5 right-1' : 'justify-items-center'
         }`}
       >
-        {/* ? contain or fill */}
         <img
           src={img}
           alt={`sneakers image ${id}`}

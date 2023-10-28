@@ -1,5 +1,6 @@
 import { ClockIcon, HashtagIcon } from '@heroicons/react/24/outline';
 import { HeartIcon } from '@heroicons/react/24/solid';
+// @ts-ignore
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 import truncate from 'lodash.truncate';
@@ -42,7 +43,7 @@ const Stories: React.FC<StoriesProps> = ({ title = 'Top Stories' }) => {
       dispatch(fetchNews());
     };
     fetchData();
-  }, []);
+  }, [dispatch]);
 
   if (status === Status.LOADING) return <p className='text-center text-xl font-bold'>Loading...</p>;
 
