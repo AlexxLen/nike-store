@@ -10,7 +10,8 @@ type SalesProps = {
 };
 
 const Sales: React.FC<SalesProps> = ({ title, items, isLarge }) => {
-  if (items.length === 0) return <p>Failed to load items</p>;
+  if (items.length === 0) return <p className='text-center'>Failed to load items</p>;
+
   return (
     <div className='nike-container'>
       <Title value={title} />
