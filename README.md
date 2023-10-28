@@ -2,8 +2,6 @@
 
 Nike Store - интернет-магазин кроссовок Nike.
 
-**Demo:** https://alexxlen-nike-store.vercel.app
-
 **Stack:**
 
 - React
@@ -15,4 +13,5 @@ Nike Store - интернет-магазин кроссовок Nike.
 - Lodash
 - LocalStorage (хранение корзины)
 
+**Demo:** https://alexxlen-nike-store.vercel.app
 ![Demo gif](demo.gif)
