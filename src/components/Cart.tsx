@@ -1,4 +1,5 @@
 import React from 'react';
+import toast from 'react-hot-toast';
 import { useSelector } from 'react-redux';
 import {
   selectCartItems,
@@ -32,7 +33,10 @@ const Cart: React.FC = () => {
   };
 
   const onRemoveItem = (id: string) => {
-    if (confirm('Are you sure you want to remove this item?')) dispatch(removeCartItem(id));
+    if (confirm('Are you sure you want to remove this item?')) {
+      dispatch(removeCartItem(id));
+      toast.success('Item removed successfully');
+    }
   };
 
   const onIncreaseItem = (id: string) => {
@@ -44,7 +48,10 @@ const Cart: React.FC = () => {
   };
 
   const onClearCart = () => {
-    if (confirm('Are you sure you want to clear the cart?')) dispatch(clearCart());
+    if (confirm('Are you sure you want to clear the cart?')) {
+      dispatch(clearCart());
+      toast.success('Cart cleared successfully');
+    }
   };
 
   return (

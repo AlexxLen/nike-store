@@ -22,8 +22,8 @@ const Sales: React.FC<SalesProps> = ({ title, items, isLarge }) => {
             : 'grid-cols-4 xl:grid-cols-3 md:grid-cols-2 sm:grid-cols-1'
         } `}
       >
-        {items?.map((item) => (
-          <Item key={item.id} value={item} isHorizontal={isLarge} />
+        {items?.map((obj) => (
+          <Item key={obj.id} value={obj} isHorizontal={isLarge} />
         ))}
       </div>
     </div>

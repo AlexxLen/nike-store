@@ -21,9 +21,12 @@ const CartItem: React.FC<CartItemProps> = ({
     <div className='flex items-stretch justify-between gap-5 w-full'>
       <div className='flex items-stretch h-full gap-5'>
         <div
-          className={`bg-gradient-to-b ${color} ${shadow} relative rounded p-3 w-36  lg:w-32 min-h-20 hover:scale-105 transition-all duration-300 ease-in-out`}
+          className={`relative bg-gradient-to-b ${color} ${shadow} rounded p-3 w-36  lg:w-32 min-h-20 hover:scale-105 transition-all duration-300 ease-in-out`}
         >
           <img src={img} alt={`${title} image`} className='w-full h-full object-contain ' />
+          <div className='absolute top-1 right-1 blur-theme-effect bg-white/80 opacity-100 text-xs p-1 leading-none rounded'>
+            ${price}
+          </div>
         </div>
         <div className='flex flex-col justify-between py-2 gap-2'>
           <div className='flex flex-col leading-none'>

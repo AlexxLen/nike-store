@@ -40,20 +40,20 @@ const Hero: React.FC<HeroProps> = ({ info }) => {
               {btnText}
             </button>
             <div className='grid items-center gap-5 md:gap-3 absolute top-[33vh] lg:top-[27vh] left-[7%] xl:left-0 w-auto h-auto'>
-              {videos?.map((item, i) => (
-                <Clip key={i} img={item.img} clip={item.clip} />
+              {videos?.map((obj, i) => (
+                <Clip key={i} img={obj.img} clip={obj.clip} />
               ))}
             </div>
             <div className='grid items-center gap-3 md:gap-3 absolute top-[33vh] lg:top-[27vh] z-20 right-0 w-auto h-auto'>
-              {socialLinks.map((item, i) => (
-                <SocialLink key={i} icon={item.icon} />
+              {socialLinks?.map((obj, i) => (
+                <SocialLink key={i} icon={obj.icon} />
               ))}
             </div>
           </div>
           <div>
             <img
               src={img}
-              alt=''
+              alt='Hero image'
               className='w-auto h-[45vh] lg:h[35vh] md:h-[31vh] sm:h-[21vh] xsm:h-[19vh] transitions-theme -rotate-[25deg] hover:rotate-0 object-fill'
             />
           </div>

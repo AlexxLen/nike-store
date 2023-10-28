@@ -11,7 +11,7 @@ type ItemProps = {
 
 const Item: React.FC<ItemProps> = ({ value, isHorizontal = false }) => {
   const dispatch = useAppDispatch();
-  const { id, color, shadow, title, text, img, rating, price } = value;
+  const { color, shadow, title, text, img, rating, price } = value;
 
   const onAddToCart = () => {
     dispatch(addItemToCart({ ...value, count: 0 }));
@@ -75,7 +75,7 @@ const Item: React.FC<ItemProps> = ({ value, isHorizontal = false }) => {
       >
         <img
           src={img}
-          alt={`sneakers image ${id}`}
+          alt={title}
           className={`object-contain transitions-theme hover:-rotate-12 ${
             isHorizontal ? 'h-auto w-64 lg:w-56 md:w-48 -rotate-[35deg]' : 'h-36 w-64'
           }`}

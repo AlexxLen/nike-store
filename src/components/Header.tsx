@@ -48,7 +48,7 @@ const Header: React.FC = () => {
     >
       <nav className='flex items-center justify-between nike-container'>
         <div className='flex items-center'>
-          <img src={logo} alt='logo' className={`w-16 h-auto ${show && 'filter brightness-0'}`} />
+          <img src={logo} alt='Logo' className={`w-16 h-auto ${show && 'filter brightness-0'}`} />
         </div>
         <ul className='flex items-center justify-center gap-2'>
           <li>

@@ -10,7 +10,7 @@ const Clip: React.FC<ClipProps> = ({ img, clip }) => (
   <div className='relative h-28 w-32 rounded-xl overflow-hidden group cursor-pointer transition-all duration-300 lg:w-28 md:24 sm:w-16 lg:h-24 md:h-20 sm:h-14'>
     <img
       src={img}
-      alt='img clip'
+      alt='Clip image'
       className='inset-0 flex h-full w-full object-cover absolute opacity-100 z-10 transition-opacity duration-500'
     />
     <div className='bg-white blur-effect-theme absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-100 z-50 w-8 h-8 md:w-5 md:h-5 flex items-center justify-center rounded-full'>
