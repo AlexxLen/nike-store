@@ -14,4 +14,5 @@ Nike Store - интернет-магазин кроссовок Nike.
 - LocalStorage (хранение корзины)
 
 **Demo:** https://alexxlen-nike-store.vercel.app
+
 ![Demo gif](demo.gif)
